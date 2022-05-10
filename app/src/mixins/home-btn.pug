@@ -1,0 +1,7 @@
+mixin homeBtn(link, text, extraClasses="")
+    a.uppercase.bg-green-500.text-gray-50.px-3.py-4.z-index-5(
+        href=link, 
+        class=`transition transform shadow-sm shadow-green-300  
+        hover:text-green-500 hover:bg-green-300
+        ${extraClasses}`
+    ) #{text}

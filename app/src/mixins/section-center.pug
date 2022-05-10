@@ -1,0 +1,8 @@
+
+
+mixin sectionCenter(extraClasses)
+    .container.mx-auto.py-16(class=`w-85vw lg:w-95vw lg:px-4 max-w-screen-lg ${extraClasses}`)
+        if block 
+            block 
+        else 
+            p.text-gray-500 Nothing to display for this section 

@@ -1,0 +1,11 @@
+
+mixin product(imageLink, productName, price)
+    
+    article.text-gray-500
+        figure
+        
+            img.rounded-sm.h-64(src=imageLink, alt=productName, )
+
+        .text-2xl.capitalize.my-3 #{productName}
+
+        .text-xl.my-1 #{price}

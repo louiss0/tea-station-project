@@ -1,0 +1,12 @@
+
+mixin sectionTitle(firstHalf, secondHalf, extraClasses="")
+    
+    
+    h2.flex-flex-col.gap-4.text-3xl.mb-8(
+        id=`${firstHalf.split(" ").join("-").toLowerCase()}`
+        class=extraClasses
+        )
+        
+        small.font-ghotel.text-green-500 #{firstHalf}
+
+        .text-2xl #{secondHalf}
