@@ -4,7 +4,7 @@
 
 
 body{
-    @apply font-catamaran bg-gray-50 text-gray-900 leading-normal;
+    @apply relative font-catamaran bg-gray-50 text-gray-900 leading-normal;
 }
 
 

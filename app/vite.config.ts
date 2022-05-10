@@ -15,7 +15,7 @@ export default defineConfig({
   },
   
   plugins: [
-    pugPlugin({pretty:true},{ require }),
+    pugPlugin({pretty:true}),
     WindiCSS(),
     mpa({open:false, scanFile:"index.html"})
     
