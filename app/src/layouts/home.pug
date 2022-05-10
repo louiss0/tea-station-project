@@ -1,15 +1,290 @@
-
 extends ./main.pug
+include ../mixins/cover.pug
+include ../mixins/home-btn.pug
+include ../mixins/content-divider.pug
+include ../mixins/skill.pug
+include ../mixins/hot-mug.pug
+include ../mixins/bomb.pug
+include ../mixins/glass-cheers.pug
+include ../mixins/mortar-pestle.pug
+include ../mixins/email.pug
+include ../mixins/phone.pug
+include ../mixins/home.pug
+
+include ../mixins/section-title.pug
+include ../mixins/section-center.pug
+
+include ../mixins/product.pug
+include ../mixins/service.pug
+include ../mixins/contact.pug
+
+include ../mixins/location-arrow.pug
+
+
+include ../mixins/facebook.pug
+include ../mixins/twitter.pug
+include ../mixins/instagram.pug
 
 
 
+block header
 
+
+    .min-h-screen.bg-no-repeat.bg-center.bg-cover.bg-fixed.relative(
+        class="flex flex-col justify-center items-center"
+        style="background-image: url('/images/main-bcg.jpeg')"
+    )
+        +cover("bg-gradient-to-r from-gray-900/60 via-transparent to-gray-900/60")
+            
+        h1.text-4xl.text-center(class="children:mb-3") 
+            
+            .font-ghotel.text-2xl.text-green-300 Over one hundred flavors of
+
+            .text-gray-50 Specifcally crafted tea
+            
+
+        +homeBtn(
+            "/skills/index.html",
+            "Explore",
+            `outline outline-solid outline-green-500 
+            outline-offset-2 text-xl px-10 py-4`
+            
+            ).  
 
 
 block main
+    
+    +contentDivider
+    
+    section.bg-gray-100(
+        aria-label="skills"
+        class="md:flex md:children:flex-1"
+        )
+        
+        +skill("Made by us")
+            .transform.w-12.h-12.text-green-500(
+                class="group-hover:-translate-y-0.5"
+            )
+                +hotMug
+        
+        +skill("Relaxation")
+            .transform.w-12.h-12.text-green-500(
+                class="group-hover:-translate-y-0.5"
+            )
+                +glassCheers
+        
+        +skill("Energy")
+            .transform.w-12.h-12.text-green-500(
+                class="group-hover:-translate-y-0.5"
+            )
+                +bomb
+        
+        +skill("Family Recipe")
+            .transform.w-12.h-12.text-green-500(
+                class="group-hover:-translate-y-0.5"
+            )
+                +mortarPestle
+
+    section(aria-label="about us")
+
+        
+        +sectionCenter("md:flex md:gap-8")
+            
+            figure.text-green-500.bg-current.overflow-hidden(
+                class="border-3 border-current border-solid "
+                )
+                
+                img.transform.transition(
+                    src="/images/about-bcg.jpeg", 
+                    alt="Tea Kettle",
+                    class=`md:hover:opacity-50 md:hover:scale-125 
+                    duration-300 ease-in-out`
+                    )
+                
+            article.py-4(class="md:basis-6/10")
+            
+                +sectionTitle("About Our", "Tea Station")
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quis cumque nam alias doloribus voluptatum.
+                
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque mollitia dolore explicabo non deleniti.
+
+                +homeBtn("/about.html", "Learn more", "my-4").
+
+    section.bg-gray-100(aria-label="products")
+
+        +sectionCenter("md:flex gap-8")
+
+            article.py-8(class="md:py-0 md:basis-2/6")
+
+                +sectionTitle("Check out", "our products")
+
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, magnam quo totam maiores ullam obcaecati eveniet reprehenderit, porro commodi minima iste et possimus id repudiandae.
+
+                +homeBtn("/products.html" , 'inventory')
+
+            div(class="sm:flex md:basis-4/6 sm:flex-wrap md:gap-4  sm:children:basis-1/2 sm:children:shrink-0  md:children:flex-1")
+
+                +product(
+                    "/images/product-1.jpeg",
+                    "ginger peach",
+                    6.99,
+                )
+                
+                +product(
+                    "/images/product-2.jpeg",
+                    "fruit sangria",
+                    6.99,
+                )
+                
+                +product(
+                    "/images/product-3.jpeg",
+                    "white tea",
+                    6.99,
+                )
+                
+
+    section(aria-label="services")
+
+        +sectionTitle("explore","our services", "mt-16 -mb-16 text-center")
+
+        +sectionCenter("md:flex md:gap-4 md:children:flex-2 lg:children:flex-1")
+
+            +service("/images/product-1.jpeg", "custom recipes")
+                .transition.transform.rounded-full.w-20.h-20(
+                    class="absolute -bottom-10 bg-gray-50  text-green-500 p-4 rounded-full border-current border-2 border-solid left-1/2 -translate-x-1/2"
+                )
+                    +mortarPestle
+
+            +service("/images/product-2.jpeg", "home delivery")
+                .transition.transform.rounded-full.w-20.h-20(
+                    class="absolute -bottom-10 bg-gray-50  text-green-500 p-4 rounded-full border-current border-2 border-solid left-1/2 -translate-x-1/2"
+                )
+                    +home
+
+            +service("/images/product-3.jpeg", "tea aging")
+                .transition.transform.rounded-full.w-20.h-20(
+                    class="absolute -bottom-10 bg-gray-50  text-green-500 p-4 rounded-full border-current border-2 border-solid left-1/2 -translate-x-1/2"
+                )
+                    +hotMug
+
+    section.bg-gray-100(aria-label="contact" )
+
+        +sectionCenter("md:flex md:gap-16")
+            
+            .text-lg(class="md:basis-2/5") 
+                
+                +contact(
+                    "address",
+                    `523 N Fairfax Ave
+                    Los Angeles, CA 90048`
+                    )
+                    
+                    .text-green-300.w-6.h-6
+                    
+                        +locationArrow
+                
+                
+                +contact(
+                    "email",
+                    "email@email.com"
+                    )
+                    
+                    .text-green-300.w-6.h-6
+                    
+                        +email
+
+                
+                +contact(
+                    "telephone",
+                    "34 + 123 456 7890"
+                    )
+                    
+                    .text-green-300.w-6.h-6
+
+                        +phone
+
+            form.bg-white.rounded-md.text-center(
+                action=""
+                class="transition duration-300 ease-in hover:shadow-md hover:shadow-gray-900 p-4 md:basis-3/5"
+            )
+                fieldset.mt-5.py-2 
+                    
+                    legend.capitalize.text-gray-500.text-3xl contact us 
+
+                    .flex.flex-col(class="gap-4")
+                        
+                        input(
+                            type="text" 
+                            name="name" 
+                            placeholder="Name"
+                            class="bg-gray-50 placeholder-gray-500 rounded-sm uppercase tracking-wide py-4 px-6 "
+                            )
+                        
+                        
+                        input(
+                            type="email" 
+                            name="email"
+                            placeholder="Email"
+                            class="bg-gray-50 placeholder-gray-500 rounded-sm uppercase tracking-wide py-4 px-6 "
+                            )
+                        
+                        
+                        textarea#message(
+                            name="message", 
+                            cols="" 
+                            rows="5"
+                            class="bg-gray-50 placeholder-gray-500 uppercase tracking-wide py-4 px-6"
+                            ) Message
+
+                button(
+                    type="submit" 
+                    class="w-full bg-green-500 text-gray-50 capitalize py-4"
+                    ) contact us
+
 
 
 
 
 block footer
-    .text-gray-600 This is the footer
+    .w-full.h-full.bg-gray-900.text-gray-50
+
+        +sectionCenter("flex flex-col items-center gap-5")
+            
+            .flex.gap-4 
+                a.transition.transform(
+                    href="#" 
+                    class="w-6 h-6 hover:text-green-500"
+                    ) 
+                    +facebook
+
+                a.transition.transform(
+                    href="#" 
+                    class="w-6 h-6 hover:text-green-500"
+                    ) 
+                    +twitter
+            
+                a.transition.transform(
+                    href="#" 
+                    class="w-6 h-6 hover:text-green-500"
+                    ) 
+                    +instagram 
+
+            .uppercase
+                
+                | &copy; 
+                
+                time#footer-date-time(datetime="2022") 2022
+                
+                span.text-green-300  tea station 
+                
+                | all rights reserved
+
+
+
+
+
+
+
+
+

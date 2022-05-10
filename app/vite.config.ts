@@ -3,6 +3,8 @@ import WindiCSS from 'vite-plugin-windicss'
 import pugPlugin from 'vite-plugin-pug'
 import mpa from 'vite-plugin-mpa' 
 
+
+
 export default defineConfig({
   server: {
     host: '0.0.0.0',
@@ -13,7 +15,7 @@ export default defineConfig({
   },
   
   plugins: [
-    pugPlugin(),
+    pugPlugin({pretty:true},{ require }),
     WindiCSS(),
     mpa({open:false, scanFile:"index.html"})
     
