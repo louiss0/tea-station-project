@@ -4,9 +4,9 @@ tags: [HTML, CSS, typescript]
 note type: Main
 ---
 
-# Vite Template
+# Tea Station Project
 
-This template is a basic html css js template for that uses vite as it's module bundler. It's uses docker to start up the app. There are two folders at the main part of the project. The app folder and the dockerfiles folder. The app folder contains all of the source files for the project. Since docker is a dev environment there are no build docker files at all. In the app folder there is a folder named the src folder It has the files that are necessary. In the docker files folder there is a server docker file and an npm docker file. The main packages so far are `'vite- plugin-pug'` which allows you to inject pug into the html and `'windicss'` along with it's plugin. The package that ties this mpa style app together is called `'vite-plugin-mpa'`.
+This project is called the tea station project this is the one that comes from udemy im testing out my basic html template that I made with vite. The project is a simple project that is a tea station project.
 
 To start up the server use the following command.
 
@@ -42,6 +42,33 @@ export default defineConfig({
   },
 });
 ```
+
+- This is the windi css config so far
+
+```ts
+import { defineConfig } from "windicss/helpers";
+
+export default defineConfig({
+  theme: {
+    extend: {
+      fontFamily: {
+        catamaran: ["Catamaran", "sans-serif"],
+        ghotel: ["Grand Hotel", "cursive"],
+      },
+    },
+  },
+});
+```
+
+- The main colors for this project are
+  
+  - green-500
+  - green-300
+  
+  - gray-900
+  - gray-500
+  - gray-100
+  - white
 
 > [!Warning]
 > I could not get hmr to work at all automatically it might be that im using windows but please don't get rid of watch at all or the use polling setting that put in it is very important. This means that every time you make a change you must save the file to see any changes. **Don't change any of the settings for the mpa options if you get rid of the open option you'll get a bug if you get rid of the scanFile option it will expect to find a `main{.ts?x.js?x} file in each page folder`**
