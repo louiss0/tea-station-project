@@ -21,15 +21,16 @@ mixin navbar
     
     nav
         
-        button.fixed.z-index-1.text-green-500.cursor-pointer(id="sidebar-button"
-        class=" w-16 h-16 px-1 py-3 "
+        button.fixed.z-index-1.text-green-500.cursor-pointer(
+        id="sidebar-button"
+        class=" w-16 h-16 px-1 py-3"
         )
             
             +hamburger 
         
         aside.absolute.top-0.bottom-0.left-0.z-index-2.transition(
             class=`bg-gray-50 w-80 transform duration-400 ease-in-out
-             -translate-x-full
+            -translate-x-full
             `
             id="sidebar"
         )
@@ -42,6 +43,7 @@ mixin navbar
                     +close
 
             ul.list-none.capitalize
+        
                 for link in links
 
                     li.h-24.p-4(

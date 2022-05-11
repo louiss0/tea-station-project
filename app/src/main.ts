@@ -8,19 +8,29 @@ enum Classes {
 
 const body  = document.querySelector("body")
 
-const [sidebarButton, sidebar, closeButton] = [
+const [sidebarButton, sidebar, closeButton, footerDateTime] = [
     body?.querySelector<HTMLButtonElement>("#sidebar-button"),
-    body?.querySelector<HTMLButtonElement>("#sidebar"),
-    body?.querySelector<HTMLButtonElement>("#close-button")
+    body?.querySelector("#sidebar"),
+    body?.querySelector<HTMLButtonElement>("#close-button"),
+    body?.querySelector<HTMLTimeElement>("#footer-date-time")
 ]
 
-if (!sidebarButton || !sidebar|| !closeButton) {
+if (!sidebarButton || !sidebar|| !closeButton ) {
     
-    console.error("There is no sidebar button or sidebar   at all")
+    console.error("There is no sidebar button or sidebar or close button  at all")
+
+} else if (!footerDateTime) {
+
+    console.error("There is no time element for the datetime at all footer at all")
 
 } else {
 
-    
+    const year = new Date().getFullYear()
+
+    const [yearAsString, yearAsLocaleString] = [
+        year.toString(),
+        year.toLocaleString()
+    ]
 
     sidebarButton.addEventListener("click", () => {
         
@@ -34,6 +44,12 @@ if (!sidebarButton || !sidebar|| !closeButton) {
         sidebar.classList.add(Classes.TRANSLATE_X)
 
     })
+
+
+    footerDateTime.dateTime = yearAsLocaleString
+    footerDateTime.textContent = yearAsString
+
+
 
     
 

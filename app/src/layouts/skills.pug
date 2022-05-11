@@ -1,0 +1,35 @@
+extend ./main.pug
+
+include ../mixins/skill.pug
+
+include ../mixins/hot-mug.pug
+include ../mixins/bomb.pug
+include ../mixins/glass-cheers.pug
+include ../mixins/mortar-pestle.pug
+include ../mixins/email.pug
+
+
+block main     
+    +skill("Made by us")
+        .transform.w-12.h-12.text-green-500(
+            class="group-hover:-translate-y-0.5"
+        )
+            +hotMug
+    
+    +skill("Relaxation")
+        .transform.w-12.h-12.text-green-500(
+            class="group-hover:-translate-y-0.5"
+        )
+            +glassCheers
+    
+    +skill("Energy")
+        .transform.w-12.h-12.text-green-500(
+            class="group-hover:-translate-y-0.5"
+        )
+            +bomb
+    
+    +skill("Family Recipe")
+        .transform.w-12.h-12.text-green-500(
+            class="group-hover:-translate-y-0.5"
+        )
+            +mortarPestle

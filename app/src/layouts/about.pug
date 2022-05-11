@@ -1,0 +1,32 @@
+
+
+
+extend ./main.pug
+
+include ../mixins/section-center.pug
+
+
+block main 
+
+    +sectionCenter("md:flex md:gap-8")
+            
+            figure.text-green-500.bg-current.overflow-hidden(
+                class="border-3 border-current border-solid "
+                )
+                
+                img.transform.transition(
+                    src="/images/about-bcg.jpeg", 
+                    alt="Tea Kettle",
+                    class=`md:hover:opacity-50 md:hover:scale-125 
+                    duration-300 ease-in-out`
+                    )
+                
+            article.py-4(class="md:basis-6/10")
+            
+                +sectionTitle("About Our", "Tea Station")
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quis cumque nam alias doloribus voluptatum.
+                
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque mollitia dolore explicabo non deleniti.
+
+                +homeBtn("/about.html", "Learn more", "my-4").

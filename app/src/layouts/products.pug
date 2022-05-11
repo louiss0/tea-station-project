@@ -1,0 +1,39 @@
+extend ./main.pug 
+
+include ../mixins/section-title.pug
+include ../mixins/section-center.pug
+include ../mixins/product.pug
+
+
+block main 
+    
+    +sectionCenter("md:flex gap-8")
+
+        article.py-8(class="md:py-0 md:basis-2/6")
+
+            +sectionTitle("Check out", "our products")
+
+            p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, magnam quo totam maiores ullam obcaecati eveniet reprehenderit, porro commodi minima iste et possimus id repudiandae.
+
+            +homeBtn("/products.html" , 'inventory')
+
+        div(class="sm:flex md:basis-4/6 sm:flex-wrap md:gap-4  sm:children:basis-1/2 sm:children:shrink-0  md:children:flex-1")
+
+            +product(
+                "/images/product-1.jpeg",
+                "ginger peach",
+                6.99,
+            )
+            
+            +product(
+                "/images/product-2.jpeg",
+                "fruit sangria",
+                6.99,
+            )
+            
+            +product(
+                "/images/product-3.jpeg",
+                "white tea",
+                6.99,
+            )
+        
